@@ -8,6 +8,7 @@
     <table class="table-auto w-full border-collapse">
         <thead>
             <tr>
+                <th class="px-4 py-2 bg-gray-200 text-gray-700 border">Sequence</th>
                 <th class="px-4 py-2 bg-gray-200 text-gray-700 border">Order ID</th>
                 <th class="px-4 py-2 bg-gray-200 text-gray-700 border">Start Time</th>
                 <th class="px-4 py-2 bg-gray-200 text-gray-700 border">End Time</th>
@@ -20,8 +21,9 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($schedule as $item)
+            @foreach($schedule as $index => $item)
                 <tr>
+                    <td class="px-4 py-2 border text-center">{{ $index + 1 }}</td>
                     <td class="px-4 py-2 border text-center">{{ $item['order_id'] }}</td>
                     <td class="px-4 py-2 border text-center">{{ $item['start_time'] }}</td>
                     <td class="px-4 py-2 border text-center">{{ $item['end_time'] }}</td>
