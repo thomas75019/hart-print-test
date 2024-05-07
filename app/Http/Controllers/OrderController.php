@@ -19,7 +19,6 @@ class OrderController extends Controller
     public function index(): View
     {
         $groupedOrders = Order::with('orderItems')
-            ->where('end_production_date', '>', now())
             ->orderBy('need_by_date')
             ->get()
             ->groupBy(function ($order) {
